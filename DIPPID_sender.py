@@ -10,7 +10,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
 isButtonPressed = False
-nextActionTime = time.time() + random.randint(5, 10)
+nextActionTime = time.time() + random.randint(9, 10)
 
 while True:
     currentTime = time.time()
@@ -25,7 +25,7 @@ while True:
         if currentTime >= nextActionTime:
             print("Sent: Release")
             isButtonPressed = False
-            nextActionTime = currentTime + random.randint(5, 10)
+            nextActionTime = currentTime + random.randint(5000, 10000)
 
     # send continous stream of button events
     if isButtonPressed:
@@ -40,6 +40,12 @@ while True:
 
     # send phone movement
     message = f'{{"accelerometer": ' f'{{"x": {x:.6f}, "y": {y:.6f}, "z": {z:.6f}}}}}'
+    sock.sendto(
+        message.encode(),
+        (IP, PORT),
+    )
+
+    message = f'{{"gyroscope": ' f'{{"x": {x:.6f}, "y": {y:.6f}, "z": {z:.6f}}}}}'
     sock.sendto(
         message.encode(),
         (IP, PORT),
