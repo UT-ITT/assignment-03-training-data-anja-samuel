@@ -1,0 +1,3 @@
+To start recording, press button 1. The recording starts as soon as the button is released
+After 10 seconds, it will wait for button 1 again. 
+After 5 recordings, it will switch to the next activity automatically.

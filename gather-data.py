@@ -15,7 +15,7 @@ RECORDINGS_PER_ACTIVITY = 5
 
 
 def get_output_filename(name, activity, number):
-    return f"{name}-{activity}-{number}.csv"
+    return f"csv/{name}-{activity}-{number}.csv"
 
 
 def wait_for_button_release(sensor):
