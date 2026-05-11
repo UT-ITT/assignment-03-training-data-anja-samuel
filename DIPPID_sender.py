@@ -25,7 +25,7 @@ while True:
         if currentTime >= nextActionTime:
             print("Sent: Release")
             isButtonPressed = False
-            nextActionTime = currentTime + random.randint(11, 11)
+            nextActionTime = currentTime + random.randint(3, 4)
 
     # send continous stream of button events
     if isButtonPressed:
