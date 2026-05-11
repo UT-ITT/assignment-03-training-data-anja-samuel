@@ -10,7 +10,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
 isButtonPressed = False
-nextActionTime = time.time() + random.randint(9, 10)
+nextActionTime = time.time() + random.randint(5, 5)
 
 while True:
     currentTime = time.time()
@@ -25,7 +25,7 @@ while True:
         if currentTime >= nextActionTime:
             print("Sent: Release")
             isButtonPressed = False
-            nextActionTime = currentTime + random.randint(5000, 10000)
+            nextActionTime = currentTime + random.randint(11, 11)
 
     # send continous stream of button events
     if isButtonPressed:
